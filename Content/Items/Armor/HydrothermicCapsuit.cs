@@ -56,7 +56,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             CreateRecipe().
                 AddIngredient<ScoriaBar>(7).
-                AddIngredient<CoreofHavoc>().
+                AddIngredient<EssenceofHavoc>(3).
                 AddTile(TileID.MythrilAnvil).
                 Register();
         }

@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient<PortableParticleAccelerator>()
                 .AddIngredient(ItemID.EyeoftheGolem)
-                .AddIngredient<CoreofSunlight>(3)
+                .AddIngredient<CoreofCalamity>()
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
         }

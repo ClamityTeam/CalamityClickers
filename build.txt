@@ -1,5 +1,6 @@
 displayName = Calamity Clickers
 author = WitherTaco
-version = 1.2.0.4
+version = 1.2.0.5
 modReferences = CalamityMod, ClickerClass, ClickerExtraAPI
 weakReferences = CatalystMod, NoxusBoss
+buildIgnore = .vs\*, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, .git\*, .github\*, LICENSE, README.md, .editorconfig, .gitignore, .gitattributes, lib\*

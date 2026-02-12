@@ -216,7 +216,7 @@ namespace CalamityClickers
                     Projectile.NewProjectileDirect(Player.GetSource_Accessory(setIntergelacticClicker), Player.Center, Vector2.One, num, damage, 10f, Player.whoAmI);
                 }
 
-                if (!obj.auricSet && Main.netMode != 2)
+                if (!obj.auricSet && Main.netMode != NetmodeID.Server)
                 {
                     float amount = Math.Min(Player.velocity.Length() / 30f, 1f);
                     Lighting.AddLight(Player.Center, Vector3.Lerp(new Vector3(0.125f, 0.005f, 0.3f), new Vector3(0.85f, 0.09f, 0.82f), amount) * 3f);
@@ -334,7 +334,7 @@ namespace CalamityClickers
                                             }
                                             if (Player.whoAmI != Main.myPlayer)
                                             {
-                                                NetMessage.SendData(66, -1, -1, null, Player.whoAmI, result);
+                                                NetMessage.SendData(MessageID.SpiritHeal, -1, -1, null, Player.whoAmI, result);
                                             }
                                         }
 
@@ -350,7 +350,7 @@ namespace CalamityClickers
                                         Player.AddBuff(ModContent.BuffType<CookieBuff>(), 300);
                                         for (int k = 0; k < 10; k++)
                                         {
-                                            Dust dust = Dust.NewDustDirect(proj.Center, 20, 20, 0, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 4f), 75, default, 1.5f);
+                                            Dust dust = Dust.NewDustDirect(proj.Center, 20, 20, DustID.Dirt, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 4f), 75, default, 1.5f);
                                             dust.noGravity = true;
                                         }
                                     }
@@ -406,7 +406,7 @@ namespace CalamityClickers
                                                 {
                                                     sMedalBase.MouseoverAlpha = 1f;
                                                     Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 88, Scale: 1.25f);
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, DustID.GemSapphire, Scale: 1.25f);
                                                     dust.noGravity = true;
                                                     dust.velocity = -offset * 0.05f;
                                                     break;
@@ -426,7 +426,7 @@ namespace CalamityClickers
                                                 {
                                                     sMedalBase.MouseoverAlpha = 1f;
                                                     Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, DustID.GemTopaz, Scale: 1.25f);
                                                     dust.noGravity = true;
                                                     dust.velocity = -offset * 0.05f;
                                                     break;
@@ -453,7 +453,7 @@ namespace CalamityClickers
                                                 {
                                                     sMedalBase.MouseoverAlpha = 1f;
                                                     Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, DustID.GemTopaz, Scale: 1.25f);
                                                     dust.noGravity = true;
                                                     dust.velocity = -offset * 0.05f;
                                                     break;

@@ -343,7 +343,7 @@ namespace CalamityClickers.Content.Projectiles
                 }
             }
 
-            if (Main.netMode == 2)
+            if (Main.netMode == NetmodeID.Server)
             {
                 return;
             }

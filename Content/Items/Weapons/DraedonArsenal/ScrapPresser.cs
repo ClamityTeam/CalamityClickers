@@ -3,6 +3,7 @@ using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.SunkenSea;
 using CalamityMod.Particles;
 using ClickerClass;
 using Microsoft.Xna.Framework;

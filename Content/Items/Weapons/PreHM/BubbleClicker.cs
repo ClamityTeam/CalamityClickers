@@ -3,6 +3,7 @@ using CalamityMod.Buffs.StatDebuffs;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.FurnitureAcidwood;
 using ClickerClass;
 using Microsoft.Xna.Framework;
 using System;
@@ -112,7 +113,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 num5 = num4 / num5;
                 num2 *= num5;
                 num3 *= num5;
-                int num6 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 261, 0f, 0f, 100, default(Color), 2.5f);
+                int num6 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.AncientLight, 0f, 0f, 100, default(Color), 2.5f);
                 Dust obj = Main.dust[num6];
                 obj.noGravity = true;
                 obj.position.X = Projectile.Center.X;

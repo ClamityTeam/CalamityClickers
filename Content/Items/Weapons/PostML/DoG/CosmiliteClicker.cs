@@ -35,7 +35,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 
             Item.damage = 350;
             Item.knockBack = 1f;
-            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.rare = ModContent.RarityType<CosmicPurple>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
         }
         public override void AddRecipes()

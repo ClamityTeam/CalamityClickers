@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             CreateRecipe()
                 .AddIngredient(ItemID.DemoniteBar, 3)
-                .AddIngredient<RottenMatter>(9)
+                .AddIngredient<AerialiteBar>(9)
                 .AddIngredient(ItemID.RottenChunk, 3)
                 .AddTile(TileID.Anvils)
                 .Register();

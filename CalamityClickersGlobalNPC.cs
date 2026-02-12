@@ -1,4 +1,5 @@
-﻿using CalamityClickers.Content.Items.Armor;
+﻿using System.Linq;
+using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Misc.SFXButton;
 using CalamityClickers.Content.Items.Weapons.DLC;
 using CalamityClickers.Content.Items.Weapons.HM;
@@ -29,6 +30,8 @@ using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Ravager;
+using CalamityMod.NPCs.SlimeGod;
+using CalamityMod.NPCs.StormWeaver;
 using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.TownNPCs;
 using CalamityMod.NPCs.Yharon;
@@ -65,9 +68,43 @@ namespace CalamityClickers
             // Debuff vulnerabilities and resistances.
             // Damage multiplier calcs.
             // Worms that are vulnerable to debuffs and Slime God slimes take reduced damage from vulnerabilities.
-            bool wormBoss = CalamityLists.DesertScourgeIDs.Contains(npc.type) || CalamityLists.EaterofWorldsIDs.Contains(npc.type) || CalamityLists.PerforatorIDs.Contains(npc.type) ||
-                CalamityLists.AquaticScourgeIDs.Contains(npc.type) || CalamityLists.AstrumDeusIDs.Contains(npc.type) || CalamityLists.StormWeaverIDs.Contains(npc.type);
-            bool slimeGod = CalamityLists.SlimeGodIDs.Contains(npc.type);
+            int[] wormBossTypes =
+            [
+                ModContent.NPCType<DesertScourgeHead>(),
+                ModContent.NPCType<DesertScourgeBody>(),
+                ModContent.NPCType<DesertScourgeTail>(),
+                NPCID.EaterofWorldsHead,
+                NPCID.EaterofWorldsBody,
+                NPCID.EaterofWorldsTail,
+                ModContent.NPCType<PerforatorHeadSmall>(),
+                ModContent.NPCType<PerforatorHeadMedium>(),
+                ModContent.NPCType<PerforatorHeadLarge>(),
+                ModContent.NPCType<PerforatorBodySmall>(),
+                ModContent.NPCType<PerforatorBodyMedium>(),
+                ModContent.NPCType<PerforatorBodyLarge>(),
+                ModContent.NPCType<PerforatorTailSmall>(),
+                ModContent.NPCType<PerforatorTailMedium>(),
+                ModContent.NPCType<PerforatorTailLarge>(),
+                ModContent.NPCType<AquaticScourgeHead>(),
+                ModContent.NPCType<AquaticScourgeBody>(),
+                ModContent.NPCType<AquaticScourgeTail>(),
+                ModContent.NPCType<AstrumDeusHead>(),
+                ModContent.NPCType<AstrumDeusBody>(),
+                ModContent.NPCType<AstrumDeusTail>(),
+                ModContent.NPCType<StormWeaverHead>(),
+                ModContent.NPCType<StormWeaverBody>(),
+                ModContent.NPCType<StormWeaverTail>()
+            ];
+
+            int[] slimeGodTypes =
+            [
+                ModContent.NPCType<SlimeGodCore>(),
+                ModContent.NPCType<CrimulanPaladin>(),
+                ModContent.NPCType<EbonianPaladin>()
+            ];
+
+            bool wormBoss = wormBossTypes.Contains(npc.type);
+            bool slimeGod = slimeGodTypes.Contains(npc.type);
 
             bool slimed = npc.drippingSlime || npc.drippingSparkleSlime;
             double heatDamageMult = slimed ? ((wormBoss || slimeGod) ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
@@ -309,7 +346,7 @@ namespace CalamityClickers
             }
 
 
-            if (npc.type == ModContent.NPCType<Bumblefuck>())
+            if (npc.type == ModContent.NPCType<Dragonfolly>())
             {
                 mainRule.Add(ModContent.ItemType<RedLightningClicker>(), 4);
             }
@@ -344,7 +381,7 @@ namespace CalamityClickers
         {
             int type = shop.NpcType;
 
-            if (type == ModContent.NPCType<DILF>())
+            if (type == ModContent.NPCType<Archmage>())
             {
                 shop.Add(ModContent.ItemType<FrostysClicker>(), Condition.DownedEverscream, Condition.DownedSantaNK1, Condition.DownedIceQueen);
             }

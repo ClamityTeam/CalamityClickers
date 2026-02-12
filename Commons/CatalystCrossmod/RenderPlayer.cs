@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Commons.CatalystCrossmod
@@ -147,7 +148,7 @@ namespace CalamityClickers.Commons.CatalystCrossmod
         internal static bool IsHoldingAnItemWhichRequiresThemToSeeNearbyTiles(Player Player)
         {
             Item item = Player.inventory[Player.selectedItem];
-            if (item.pick <= 0 && item.axe <= 0 && item.hammer <= 0 && item.tileWand <= 0 && item.createTile < 0)
+            if (item.pick <= 0 && item.axe <= 0 && item.hammer <= 0 && item.tileWand <= 0 && item.createTile < TileID.Dirt)
             {
                 return item.createWall >= 0;
             }

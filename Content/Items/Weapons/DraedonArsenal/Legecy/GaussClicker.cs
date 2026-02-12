@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
@@ -78,7 +79,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
                 {
                     for (int i = 0; i < 60; i++)
                     {
-                        Dust dust = Dust.NewDustPerfect(Projectile.Center, 261);
+                        Dust dust = Dust.NewDustPerfect(Projectile.Center, DustID.AncientLight);
                         dust.color = Utils.SelectRandom(Main.rand, Color.Yellow, Color.YellowGreen);
                         dust.velocity = Main.rand.NextVector2Circular(20f, 20f);
                         dust.scale = 2f;
@@ -97,7 +98,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
                         offset += (arcIndex * MathHelper.TwoPi / 6f + Time / 20f).ToRotationVector2() * 6f * arcIndex;
                         //Vector2 offset = (arcIndex * MathHelper.TwoPi / 6f + Time / 20f).ToRotationVector2() * 6f * arcIndex;
 
-                        Dust dust = Dust.NewDustPerfect(Projectile.Center + offset, 261);
+                        Dust dust = Dust.NewDustPerfect(Projectile.Center + offset, DustID.AncientLight);
                         dust.color = Utils.SelectRandom(Main.rand, Color.Yellow, Color.YellowGreen);
                         dust.velocity = Vector2.Zero;
                         dust.scale = scale;

@@ -196,7 +196,7 @@ namespace CalamityClickers.Content.Items.Accessories
                                 player.statLife = player.statLifeMax2;
                             }
 
-                            NetMessage.SendData(66, -1, -1, null, target, 4);
+                            NetMessage.SendData(MessageID.SpiritHeal, -1, -1, null, target, 4);
                         }
                         Projectile.Kill();
                     }

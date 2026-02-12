@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             CreateRecipe()
                 .AddIngredient(ItemID.CrimtaneBar, 3)
-                .AddIngredient<BloodSample>(9)
+                .AddIngredient<AerialiteBar>(9)
                 .AddIngredient(ItemID.Vertebrae, 3)
                 .AddTile(TileID.Anvils)
                 .Register();

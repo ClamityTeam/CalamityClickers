@@ -16,7 +16,7 @@ namespace CalamityClickers.Content.Items.Armor
             Item.height = 24;
             Item.value = Item.buyPrice(0, 8, 0, 0);
             Item.vanity = true;
-            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.rare = ModContent.RarityType<CosmicPurple>();
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)

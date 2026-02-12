@@ -43,7 +43,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
             Item.damage = 350;
             Item.knockBack = 1.5f;
-            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.rare = ModContent.RarityType<CosmicPurple>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
 
             CalamityGlobalItem modItem = Item.Calamity();
@@ -162,7 +162,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
                 for (int k = 0; k < 20; k++)
                 {
-                    Dust dust = Dust.NewDustDirect(Projectile.Center - new Vector2(4), 8, 8, 229, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 6f), 0, default, 1.25f);
+                    Dust dust = Dust.NewDustDirect(Projectile.Center - new Vector2(4), 8, 8, DustID.Vortex, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 6f), 0, default, 1.25f);
                     dust.noGravity = true;
                 }
             }
@@ -241,7 +241,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         {
             for (int k = 0; k < 10; k++)
             {
-                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 229, Main.rand.Next((int)-5f, (int)5f), Main.rand.Next((int)-5f, (int)5f), 75, default(Color), 0.75f);
+                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Vortex, Main.rand.Next((int)-5f, (int)5f), Main.rand.Next((int)-5f, (int)5f), 75, default(Color), 0.75f);
                 Main.dust[dust].noGravity = true;
             }
         }
