@@ -46,12 +46,6 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             Item.knockBack = 1.5f;
             Item.rare = ItemRarityID.Orange;
             Item.value = CalamityGlobalItem.RarityOrangeBuyPrice;
-
-            CalamityGlobalItem modItem = Item.Calamity();
-            modItem.UsesCharge = true;
-            modItem.MaxCharge = 50f;
-            modItem.ChargePerUse = 0.02f;
-
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips) => CalamityGlobalItem.InsertKnowledgeTooltip(tooltips, 1);
         public override void AddRecipes()

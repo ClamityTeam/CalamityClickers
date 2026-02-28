@@ -3,6 +3,7 @@ using CalamityMod.CalPlayer.Dashes;
 using CalamityMod.Items;
 using CalamityMod.Items.Armor.GodSlayer;
 using CalamityMod.Items.Materials;
+using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.Particles;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
@@ -52,7 +53,8 @@ namespace CalamityClickers.Content.Items.Armor
         {
             var hotkey2 = CalamityKeybinds.GodSlayerDashHotKey.TooltipHotkeyString();
             var hotkey = CalamityKeybinds.ArmorSetBonusHotKey.TooltipHotkeyString();
-            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey) + "\n" + CalamityUtils.GetTextFromModItem<GodSlayerChestplate>("CommonSetBonus").Format(hotkey2, GodslayerArmorDash.GodslayerCooldown);
+            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey) + "\n" + CalamityUtils.GetTextFromModItem<GodSlayerChestplate>("CommonSetBonus").Format(hotkey2, GodSlayerChestplate.DashCooldown.FramesToSeconds());
+            player.setBonus = player.setBonus.Replace("ff00ff", Utils.Hex3(DevourerofGodsHead.SpecialMoveColor));
 
             var modPlayer = player.Calamity();
             modPlayer.godSlayer = true;

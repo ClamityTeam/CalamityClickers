@@ -1,6 +1,6 @@
-Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. He also adds an new accessories (primary of upgrades of existing) and class helmet for calamity armors
+Calamity Clickers is addon which adds new Clickers crafted using Calamity materials or that are dropped from Calamity bosses. It also adds an new accessories and class helmets for Calamity armors
 
-This addon contain:
+This addon contains:
 [list]
 	[*] 10 Pre-Hardmode, 18 Hardmode, 20 Post-Moonlord, 2 Donor, 5 Draedon Arsenal Clickers
 	[*] 13 Clicker helmet variants for armor
@@ -10,24 +10,23 @@ This addon contain:
 [/list]
 
 Roadmap:
-Add some forgotted clickers (like Old Duke's Clicker)
+Add some forgotton clickers (like Old Duke's Clicker)
 Hunt of the Old God compatibility
 Calamity Entropy compatibility (post-Cruiser content)
 
-Also mod has changes in clicker class and calamity
+Also mod has some changes for both Clicker class and Calamity:
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
-2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. (He is OP) The Clicker now crafted with using Shadowspec Bars. Making Quintessence Clicker now allow only after defeating Exo Mechs and Calamitas
+2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. The Clicker now is crafted with using Shadowspec Bars. Quintessence Clicker is now only after defeating Exo Mechs and Supreme Calamitas.
 3. Galactica Singularity now uses Mice Fragments in craft
-4. Any Lunar Pillar enemies now drops mice fragments (less chance than other fragments but drops by any event's enemies)
-5. Gamer Crate now requares Purified Gel to craft (make accessory after Slime God)
-6. Calamity's Starter Bag contain starter clicker (Tin or Copper)
+4. Any Lunar Pillar enemy can now drops mice fragments (lower chance than other fragments but drops by any lunar enemy)
+5. Gamer Crate now requares Purified Gel to craft
+6. Calamity's Starter Bag now contains a starter clicker (Tin or Copper)
 7. Clicker class items can be used in recipe groups (Like Mice Hamaxe in Grax recipe)
-8. Adapted calamity changes to clicker class items (like The Scroller unique effect or buff of mice tools)
-9. Addon has compatibilty with Calatyst Mod and Infernum Mode
+8. Adapted Calamity changes to Clicker class items like The Scroller unique effect or buff of mice tools
 
 Special Thanks (credits):
 Puka1611 and Trudle for greatest clicker resprites and new sprites
-Aeolus for minor helping
+Aeolus and Akira for minor help
 Doot_Revenant666 for a lot suggestions (armor set bonus reworks and new ones, assessory suggestions, some clicker suggestion)
 
 [h1]My discord server:[url=https://discord.gg/7auk3bDb3K] Link[/url][/h1]

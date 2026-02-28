@@ -872,6 +872,8 @@ Projectiles: {
 		FusionPointerPro.DisplayName: Ionized Particles
 		BereftVassalsClickerPro.DisplayName: Arid Fangs
 	}
+
+	Summon.SarosMicrosun.DisplayName: Saros Microsun
 }
 
 Buffs: {

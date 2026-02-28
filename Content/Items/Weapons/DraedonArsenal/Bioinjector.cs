@@ -40,12 +40,6 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             Item.knockBack = 1.5f;
             Item.rare = ModContent.RarityType<Turquoise>();
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
-
-            CalamityGlobalItem modItem = Item.Calamity();
-            modItem.UsesCharge = true;
-            modItem.MaxCharge = 190f;
-            modItem.ChargePerUse = 0.02f;
-
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips) => CalamityGlobalItem.InsertKnowledgeTooltip(tooltips, 4);
         public override void AddRecipes()

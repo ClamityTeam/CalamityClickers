@@ -1,6 +1,6 @@
-﻿using CalamityMod.Items;
+﻿using CalamityClickers.Content.Projectiles;
+using CalamityMod.Items;
 using CalamityMod.Items.Materials;
-using CalamityMod.Projectiles.Summon;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;

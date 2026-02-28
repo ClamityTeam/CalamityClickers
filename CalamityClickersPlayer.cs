@@ -10,10 +10,12 @@ using CalamityClickers.Content.Projectiles;
 using CalamityMod;
 using CalamityMod.CalPlayer;
 using CalamityMod.Items.Accessories;
+using CalamityMod.Items.Potions.Alcohol;
 using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Particles;
 using CalamityMod.Projectiles.Rogue;
 using CalamityMod.Projectiles.Typeless;
+using CalamityMod.Systems.Collections;
 using ClickerClass;
 using ClickerClass.Buffs;
 using ClickerClass.Core.Netcode.Packets;
@@ -586,7 +588,7 @@ namespace CalamityClickers
                         // If they're a boss, reduce the boss distance.
                         // Boss distance will always be >= enemy distance, so there's no need to do another check.
                         // Worm boss body and tail segments are not counted as bosses for this calculation.
-                        if (npc.IsABoss() && !CalamityLists.noRageWormSegmentList.Contains(npc.type))
+                        if (npc.IsABoss() && !CalamityNPCSets.BossSegmentThatDoesNotGenerateRageFaster[npc.type])
                             bossDistance = hitboxEdgeDist;
                     }
                 }
@@ -688,7 +690,7 @@ namespace CalamityClickers
                     {
                         // Victide All-class Seashells: 200%, soft cap starts at 46 base damage
                         int seashellDamage = CalamityUtils.DamageSoftCap(damage * 2, 46);
-                        seashellDamage = Player.ApplyArmorAccDamageBonusesTo(seashellDamage);
+                        seashellDamage = Player.Calamity().oldFashioned ? seashellDamage : (int)((double)seashellDamage * 1.5f);
 
                         Projectile.NewProjectile(source, Main.MouseWorld, Vector2.Zero, ModContent.ProjectileType<Seashell>(), seashellDamage, 1f, Player.whoAmI);
                     }

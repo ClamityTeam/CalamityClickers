@@ -125,13 +125,13 @@ namespace CalamityClickers
                     coldDamageMult *= 0.5;
             }
 
-            double sicknessDamageMult = npc.Calamity().irradiated > 0 ? (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
+            double sicknessDamageMult = npc.Calamity().irradiated ? (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
             if (npc.Calamity().VulnerableToSickness.HasValue)
             {
                 if (npc.Calamity().VulnerableToSickness.Value)
-                    sicknessDamageMult *= npc.Calamity().irradiated > 0 ? (wormBoss ? 1.25 : 1.5) : (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult);
+                    sicknessDamageMult *= npc.Calamity().irradiated ? (wormBoss ? 1.25 : 1.5) : (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult);
                 else
-                    sicknessDamageMult *= npc.Calamity().irradiated > 0 ? (wormBoss ? 0.66 : 0.5) : 0.5;
+                    sicknessDamageMult *= npc.Calamity().irradiated ? (wormBoss ? 0.66 : 0.5) : 0.5;
             }
 
             bool increasedElectricityDamage = npc.wet || npc.honeyWet || npc.lavaWet || npc.dripping;
@@ -158,16 +158,16 @@ namespace CalamityClickers
             if (npc.Calamity().IncreasedColdEffects_CryoStone)
                 coldDamageMult += 0.5;
 
-            if (npc.Calamity().IncreasedElectricityEffects_Transformer)
+            if (npc.Calamity().IncreasedElectricityEffects_Unused)
                 electricityDamageMult += 0.5;
 
             if (npc.Calamity().IncreasedHeatEffects_Fireball)
                 heatDamageMult += 0.25;
-            if (npc.Calamity().IncreasedHeatEffects_FlameWakerBoots)
+            if (npc.Calamity().IncreasedHeatEffects_FireBoots == 1)
                 heatDamageMult += 0.25;
             if (npc.Calamity().IncreasedHeatEffects_CinnamonRoll)
                 heatDamageMult += 0.5;
-            if (npc.Calamity().IncreasedHeatEffects_HellfireTreads)
+            if (npc.Calamity().IncreasedHeatEffects_FireBoots == 2)
                 heatDamageMult += 0.5;
 
             if (npc.Calamity().IncreasedSicknessEffects_ToxicHeart)
@@ -239,7 +239,7 @@ namespace CalamityClickers
         {
             LeadingConditionRule mainRule = npcLoot.DefineNormalOnlyDropSet();
 
-            if (npc.type == ModContent.NPCType<Horse>())
+            if (npc.type == ModContent.NPCType<EarthElemental>())
             {
                 mainRule.Add(ModContent.ItemType<EarthenClicker>(), 4);
             }

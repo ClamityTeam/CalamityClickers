@@ -1,6 +1,4 @@
-Update 1.2.0.4 - Localization patch
+Update 1.2.0.5 - Calamity Brainstorm Patch
 
-Updated English localization by Puka1611
-
-Bugfixes:
-Fixed Wretched Fervor dropping from tresure bag
+- Fixed loading with Calamity 2.1 Brainstorm
+- Arsenal Clickers no longer use charge in accoridance to new Calamity changes
