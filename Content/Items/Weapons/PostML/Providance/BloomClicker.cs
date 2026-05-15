@@ -56,7 +56,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             CreateRecipe()
                 //.AddIngredient<PointyClicker>()
                 .AddIngredient<UelibloomBar>(8)
-                .AddTile(TileID.LunarCraftingStation)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
         }
     }

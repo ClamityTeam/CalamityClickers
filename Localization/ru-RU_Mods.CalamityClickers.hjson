@@ -169,7 +169,7 @@ ClickEffect: {
 	#Post-Providence
 	ProfanedInferno: {
 		Name: Оскверненное Инферно
-		Description: Вызывает взрыв Священной вспышки. Накладывает «Священное Пламя» на 3 секунды
+		Description: Высвобождает оскверненную энергию. Накладывает «Священное Пламя» на 3 секунды
 	}
 
 	TarragonThorns: {
@@ -318,6 +318,11 @@ ClickEffect: {
 		Name: Поточный удар
 		Description: Выпускает мощный поток ионизированных частиц, который проходит по дуге сквозь врагов
 	}
+
+	DoubleClick: {
+		// Name: Double Click
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -391,7 +396,6 @@ Items: {
 					'''
 					Эффект «Инферно» при уровне жизни ниже 50%.
 					Вы производите пылающий взрыв, когда вас бьют
-					5% увеличение урона клика
 					Накладывает 'Гидротермическое кипение' при ударе от оружий кликера
 					'Гидротермическое кипение' это дебафф с базовым 50 урона в секунду
 					Удары по врагу с помощью оружий кликера увеличивает УвС на 50 и время действия на 0.1 секунду
@@ -709,6 +713,7 @@ Items: {
 			Bioinjector.DisplayName: Биоинжектор
 			FusionPointer.DisplayName: Указатель слияния
 			// BereftVassalsClicker.DisplayName: Taurus' Fang
+			// MonolithClicker.DisplayName: Monolith Clicker
 		}
 	}
 
@@ -811,6 +816,18 @@ Items: {
 	SFXButtonAstral.DisplayName: SFX Кнопка - Астрал
 	SFXButtonAuric.DisplayName: SFX Кнопка - Аурик
 	SFXButtonExhume.DisplayName: SFX Кнопка - Эксгумирование
+
+	Potions: {
+		GCharge: {
+			// DisplayName: G-Charge
+			/* Tooltip:
+				'''
+				Increase click damage by 1% per click per second
+				10% increased amount of clicks required for a click effect
+				{$Mods.CalamityMod.Common.AlcoholWarning}
+				''' */
+		}
+	}
 }
 
 Projectiles: {
@@ -870,6 +887,7 @@ Projectiles: {
 		BioinjectorPro.DisplayName: Био-игла
 		FusionPointerPro.DisplayName: Ионизированные частицы
 		// BereftVassalsClickerPro.DisplayName: Arid Fangs
+		// MonolithClickerProjectile.DisplayName: Monolith Clicker Projectile
 	}
 
 	// Summon.SarosMicrosun.DisplayName: Saros Microsun
@@ -909,11 +927,17 @@ Buffs: {
 	HydrothermicCapsuitDebuff: {
 		DisplayName: Гидротермическое кипение
 		Description: Вы не знаете описание
+		// ItemTooltip: Heat - 50 DPS + 5 per stack up to total of 500 DPS
 	}
 
 	ClickerfinBuff: {
 		DisplayName: Гнев Кликерфина
 		Description: Увеличен урон клика на 25%
+	}
+
+	GChargeBuff: {
+		// DisplayName: G Charge Buff
+		// Description: Mods.CalamityClickers.Buffs.GChargeBuff.Description
 	}
 }
 

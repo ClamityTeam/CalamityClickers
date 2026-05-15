@@ -45,11 +45,9 @@ namespace CalamityClickers.Content.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = this.GetLocalizedValue("SetBonus") + "\n" + CalamityUtils.GetTextValueFromModItem<HydrothermicArmor>("CommonSetBonus");
-
+            player.setBonus = this.GetLocalization("SetBonus").Format(HydrothermicArmor.InfernoHealthThreshold.ToPercent());
             player.Calamity().ataxiaBlaze = true;
             player.GetModPlayer<CalamityClickersPlayer>().setHydrothermicClicker = true;
-            player.GetDamage<ClickerDamage>() += 0.05f;
         }
 
         public override void AddRecipes()

@@ -1,4 +1,20 @@
-Update 1.2.0.5 - Calamity Brainstorm Patch
+Update 1.3 - Actial Brainstorm Patch
 
-- Fixed loading with Calamity 2.1 Brainstorm
-- Arsenal Clickers no longer use charge in accoridance to new Calamity changes
+- Added Monolith Clicker
+- Added G-Charge alcohol, that buff click damage by cost of radius
+- Updated Visual of Profaned Rapturer's effect visual and sprite
+- Ore Press now has Pink rarity (as same as other Earth Elemental drop)
+- Verandia Elementulip uses 5 Mife Fragments instead of 5 Galactic Singularity
+- Reworked Bellatrix
+- Bellatrix now uses Starblight Clicker
+- Cosmic Clicking Glove no longer uses Cosmilite Bars
+- Twisted Duality, Hemophilic Dagger, Beyonder's Grasp, Bellatrix now requires a Hardmode Anvil to craft instead of an Ancient Manipulator.
+- Hydrothermic Headsets set no longer grants 5% click damage
+- Tarragon Biomask no longer grant damage reduction
+- Tarragon Biomask now requires a Hardmode Anvil to craft instead of an Ancient Manipulator.
+- Buffed Tarragon Biomask's defence from 18 to 24
+- Nerfed Bloodflare Clickmera Skull's defence from 20 to 16
+- Bloodflare Clickmera Skull now requires a Hardmode Anvil to craft instead of an Ancient Manipulator.
+- Nerfed God Slayer Cloaker Hood's defence from 34 to 33 
+- Nerfed God Slayer Cloaker Hood's damage boost from 14% to 10% and critical chance from 14% to 12%
+- Changed "clicker" to "click" in localization in lines like "clicker damage/critical strike chance/radius"
