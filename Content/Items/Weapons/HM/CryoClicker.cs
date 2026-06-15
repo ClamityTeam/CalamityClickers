@@ -117,7 +117,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(ModContent.BuffType<GlacialState>(), 30);
+            target.AddBuff(BuffID.Frozen, 30);
         }
     }
 }

@@ -54,32 +54,24 @@ namespace CalamityClickers.Commons
 
         public override void AddRecipes()
         {
-            foreach (Recipe recipe in Main.recipe)
-            {
-                if (recipe.HasResult<GalacticaSingularity>())
-                {
-                    recipe.AddIngredient<MiceFragment>();
-                }
-                /*if (recipe.HasResult(ItemID.CelestialSigil) && recipe.Mod == null)
-                {
-                    if (recipe.Mod == null)
-                    {
-                        recipe.AddIngredient<MiceFragment>(6);
-                    }
-                }*/
-                if (recipe.HasResult<GamerCrate>())
-                {
-                    recipe.AddIngredient<PurifiedGel>(5);
-                }
-
-            }
-
             /*Recipe.Create(ModContent.ItemType<TheClicker>())
                 .AddIngredient<LordsClicker>()
                 .AddIngredient(ItemID.WhitePaint, 50)
                 .AddIngredient<ShadowspecBar>(5)
                 .AddTile<DraedonsForge>()
                 .Register();*/
+        }
+
+        public override void PostAddRecipes()
+        {
+            foreach (Recipe recipe in Main.recipe)
+            {
+                if (recipe.HasResult<GamerCrate>())
+                {
+                    recipe.AddIngredient<PurifiedGel>(5);
+                }
+
+            }
         }
     }
 }

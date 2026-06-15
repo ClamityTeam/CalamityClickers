@@ -6,7 +6,6 @@ using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
@@ -41,8 +40,6 @@ namespace CalamityClickers.Content.Items.Accessories
                 .AddIngredient<GamerCrate>()
                 .AddIngredient<AimbotModule>()
                 //.AddIngredient<IcePack>()
-                .AddIngredient(ItemID.LunarBar, 8)
-                .AddIngredient<GalacticaSingularity>(4)
                 .AddIngredient<AscendantSpiritEssence>(4)
                 .AddTile<CosmicAnvil>()
                 .Register();

@@ -1,4 +1,8 @@
-Update 1.2.0.5 - Calamity Brainstorm Patch
+Update 1.2.0.6 - Calamity Hog Wild Patch
 
-- Fixed loading with Calamity 2.1 Brainstorm
-- Arsenal Clickers no longer use charge in accoridance to new Calamity changes
+- Fixed loading with Calamity 2.2 Hog Wild
+- D.o.G no longer requires Luminite Bars or Galactica Singularitys to craft
+- Lunar Clicking Glove now requires 5 Mice Fragments instead of Galacta Singularitys to craft
+- Cyro Clcker now inflicts Frozen instead of Glacial State
+- Meld Clicker now requires 12 Meld Blobs instead of Meld Constructs
+- Elemental Clicker now requires 5 Mice Fragments instead of Galacta Singularitys to craft

@@ -165,8 +165,6 @@ namespace CalamityClickers
                 heatDamageMult += 0.25;
             if (npc.Calamity().IncreasedHeatEffects_FireBoots == 1)
                 heatDamageMult += 0.25;
-            if (npc.Calamity().IncreasedHeatEffects_CinnamonRoll)
-                heatDamageMult += 0.5;
             if (npc.Calamity().IncreasedHeatEffects_FireBoots == 2)
                 heatDamageMult += 0.5;
 

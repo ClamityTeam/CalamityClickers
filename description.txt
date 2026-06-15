@@ -3,7 +3,7 @@ Calamity Clickers is addon which adds new Clickers crafted using Calamity materi
 This addon contains:
 - 10 Pre-Hardmode, 18 Hardmode, 20 Post-Moonlord, 2 Donor, 5 Draedon Arsenal Clickers
 - 13 Clicker helmet variants for armor
-- 7 new accessories (Primary in post-moonlord)
+- 7 new accessories (Primary post-moonlord)
 - Calamity Post-Moonlord clicker progression
 - Catalyst & Infernum Compatibilty
 
@@ -12,7 +12,7 @@ Add some forgotton clickers (like Old Duke's Clicker)
 Hunt of the Old God compatibility
 Calamity Entropy compatibility (post-Cruiser content)
 
-Also mod has some changes for both Clicker class and Calamity:
+This mod also has some other minor changes for both Clicker class and Calamity:
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
 2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. The Clicker now is crafted with using Shadowspec Bars. Quintessence Clicker is now only after defeating Exo Mechs and Supreme Calamitas.
 3. Galactica Singularity now uses Mice Fragments in craft

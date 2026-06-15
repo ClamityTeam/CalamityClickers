@@ -34,7 +34,7 @@ namespace CalamityClickers.Content.Items.Accessories
                 .AddIngredient<RegalClickingGlove>()
                 .AddIngredient<LihzahrdParticleAccelerator>()
                 .AddIngredient(ItemID.LunarBar, 5)
-                .AddIngredient<GalacticaSingularity>(5)
+                .AddIngredient<MiceFragment>(5)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }
