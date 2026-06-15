@@ -75,7 +75,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             CreateRecipe()
                 //.AddIngredient<HemoClicker>()
                 .AddIngredient<BloodstoneCore>(5)
-                .AddTile(TileID.LunarCraftingStation)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
         }
     }

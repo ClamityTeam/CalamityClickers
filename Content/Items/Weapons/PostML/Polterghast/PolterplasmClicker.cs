@@ -71,7 +71,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
                 .AddIngredient<SpectreClicker>()
                 .AddIngredient<Necroplasm>(12)
                 .AddIngredient<RuinousSoul>(2)
-                .AddTile(TileID.LunarCraftingStation)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
         }
     }

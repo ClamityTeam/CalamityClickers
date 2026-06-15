@@ -10,7 +10,6 @@ using CalamityClickers.Content.Projectiles;
 using CalamityMod;
 using CalamityMod.CalPlayer;
 using CalamityMod.Items.Accessories;
-using CalamityMod.Items.Potions.Alcohol;
 using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Particles;
 using CalamityMod.Projectiles.Rogue;
@@ -71,6 +70,7 @@ namespace CalamityClickers
 
         public bool bloodyCookieBuff = false;
         public bool godSlayerClickerBuff = false;
+        public bool gchargeBuff = false;
 
         public bool enchLecherous;
         public bool wulfrumAutoclick = true;
@@ -98,6 +98,7 @@ namespace CalamityClickers
 
             bloodyCookieBuff = false;
             godSlayerClickerBuff = false;
+            gchargeBuff = false;
 
             enchLecherous = false;
         }
@@ -110,6 +111,11 @@ namespace CalamityClickers
                     ClickerCompat.EnableClickEffect(Player, "ClickerClass:PhaseReach");
                 }
             }
+
+        }
+        public override void PostUpdate()
+        {
+
         }
         public override void PostUpdateEquips()
         {
@@ -515,6 +521,11 @@ namespace CalamityClickers
                         }
                     }
                 }
+            }
+            if (gchargeBuff)
+            {
+                //Player.Clicker().clickerRadius *= GChargeBuff.RadiusNerf;
+                //Player.Clicker().clickerRadiusDraw *= GChargeBuff.RadiusNerf;
             }
         }
         public override void PostUpdateMiscEffects()

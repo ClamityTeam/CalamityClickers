@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Armor
             Item.width = 18;
             Item.height = 18;
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
-            Item.defense = 18;
+            Item.defense = 24;
             Item.rare = ModContent.RarityType<Turquoise>();
         }
 
@@ -30,8 +30,6 @@ namespace CalamityClickers.Content.Items.Armor
             player.GetDamage<ClickerDamage>() += 0.1f;
             player.GetCritChance<ClickerDamage>() += 5;
             player.Clicker().clickerRadius += 0.5f;
-            player.endurance += 0.05f;
-
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -60,7 +58,7 @@ namespace CalamityClickers.Content.Items.Armor
             CreateRecipe().
                 AddIngredient<UelibloomBar>(7).
                 AddIngredient<DivineGeode>(6).
-                AddTile(TileID.LunarCraftingStation).
+                AddTile(TileID.MythrilAnvil).
                 Register();
         }
     }

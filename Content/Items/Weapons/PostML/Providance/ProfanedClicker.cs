@@ -1,12 +1,12 @@
 ﻿using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.Dusts;
 using CalamityMod.Items;
+using CalamityMod.Particles;
 using CalamityMod.Rarities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
@@ -61,39 +61,41 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             {
                 Spawned = true;
 
-                SoundEngine.PlaySound(SoundID.Item74, Projectile.Center);
+                //SoundEngine.PlaySound(SoundID.Item74, Projectile.Center);
 
-                /*for (int k = 0; k < 45; k++)
+                float power = 1f;
+
+                for (int i = 0; i < (int)(30 * power); i++)
                 {
-                    //Dust dust = Dust.NewDustDirect(Projectile.Center, 8, 8, ModContent.DustType<HolyFireDust>(), Main.rand.NextFloat(-16f, 16f), Main.rand.NextFloat(-16f, 16f), 125, default, 2f);
-                    //dust.noGravity = true; 
-                    //dust = Dust.NewDustDirect(Projectile.Center, 8, 8, ModContent.DustType<HolyFireDust>(), Main.rand.NextFloat(-16f, 16f), Main.rand.NextFloat(-16f, 16f), 125, default, 2f);
-
-                    //int holy2 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, 244, 0f, 0f, 100, default, 3f);
-                    //Main.dust[holy2].noGravity = true;
-                    //holy2 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, 244, 0f, 0f, 100, default, 2f);
-
-                }*/
-                for (int i = 0; i < 30; i++)
-                {
-                    Dust holyFire = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, (int)CalamityDusts.ProfanedFire, 0f, 0f, 100, default, 2f);
-                    holyFire.velocity *= 3f;
-
                     if (Main.rand.NextBool())
                     {
-                        holyFire.scale = 0.5f;
-                        holyFire.fadeIn = Main.rand.NextFloat(1f, 2f);
+                        Particle spark = new CustomSpark(Projectile.Center, ((new Vector2(19, 19) * power).RotatedByRandom(100)) * Main.rand.NextFloat(0.2f, 1f), "CalamityMod/Particles/ProvidenceMarkParticle", false, 27, Main.rand.NextFloat(1.15f, 1.3f), Main.rand.NextBool(4) ? Color.Khaki : Color.Orange, new Vector2(1.3f, 0.5f), true, false, 0, false, false, Main.rand.NextFloat(0.1f, 0.2f));
+                        GeneralParticleHandler.SpawnParticle(spark);
+                    }
+                    else
+                    {
+                        bool isSpark = Main.rand.NextBool(5);
+                        Dust dust = Dust.NewDustPerfect(Projectile.Center, isSpark ? 278 : ModContent.DustType<LightDust>(), ((new Vector2(15, 15) * power).RotatedByRandom(100)) * Main.rand.NextFloat(0.2f, 1f));
+                        dust.noGravity = true;
+                        dust.scale = Main.rand.NextFloat(1.85f, 2.15f) * power * (isSpark ? 0.5f : 1);
+                        dust.color = Main.rand.NextBool(5) ? Color.Khaki : Color.Goldenrod;
+                        if (isSpark)
+                            dust.noGravity = false;
+                        else
+                            dust.noLightEmittence = true;
                     }
                 }
-                for (int i = 0; i < 60; i++)
-                {
-                    Dust holyFire = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GoldCoin, 0f, 0f, 100, default, 3f);
-                    holyFire.noGravity = true;
-                    holyFire.velocity *= 5f;
 
-                    holyFire = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GoldCoin, 0f, 0f, 100, default, 2f);
-                    holyFire.velocity *= 2f;
-                }
+                Particle orb1 = new CustomPulse(Projectile.Center, Vector2.Zero, Color.Goldenrod, "CalamityMod/Particles/SoftRoundExplosion", new Vector2(1, 1), Main.rand.NextFloat(-10, 10), 0, 0.14f * power, 15);
+                GeneralParticleHandler.SpawnParticle(orb1);
+
+                Particle orb2 = new CustomPulse(Projectile.Center, Vector2.Zero, Color.Khaki, "CalamityMod/Particles/BloomRing", new Vector2(1, 1), Main.rand.NextFloat(-10, 10), 0, 2.1f * power, 15);
+                GeneralParticleHandler.SpawnParticle(orb2);
+
+                SoundStyle explode = new("CalamityMod/Sounds/Custom/Providence/ProvidenceHolyBlastImpact");
+                SoundEngine.PlaySound(explode with { Volume = 0.5f, Pitch = 0.3f * power }, Projectile.Center);
+                SoundStyle explode2 = new("CalamityMod/Sounds/Item/HeliumFlashReady");
+                SoundEngine.PlaySound(explode2 with { Volume = 0.7f, Pitch = 0.6f * power }, Projectile.Center);
             }
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

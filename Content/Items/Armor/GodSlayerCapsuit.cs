@@ -26,14 +26,14 @@ namespace CalamityClickers.Content.Items.Armor
             Item.width = 18;
             Item.height = 18;
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
-            Item.defense = 34;
+            Item.defense = 33;
             Item.rare = ModContent.RarityType<CosmicPurple>();
         }
 
         public override void UpdateEquip(Player player)
         {
-            player.GetDamage<ClickerDamage>() += 0.14f;
-            player.GetCritChance<ClickerDamage>() += 14;
+            player.GetDamage<ClickerDamage>() += 0.1f;
+            player.GetCritChance<ClickerDamage>() += 12;
             player.Clicker().clickerRadius += 0.9f;
             player.Clicker().clickerBonusPercent -= 0.1f;
 
@@ -51,14 +51,12 @@ namespace CalamityClickers.Content.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            var hotkey2 = CalamityKeybinds.GodSlayerDashHotKey.TooltipHotkeyString();
-            var hotkey = CalamityKeybinds.ArmorSetBonusHotKey.TooltipHotkeyString();
-            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey) + "\n" + CalamityUtils.GetTextFromModItem<GodSlayerChestplate>("CommonSetBonus").Format(hotkey2, GodSlayerChestplate.DashCooldown.FramesToSeconds());
-            player.setBonus = player.setBonus.Replace("ff00ff", Utils.Hex3(DevourerofGodsHead.SpecialMoveColor));
-
             var modPlayer = player.Calamity();
             modPlayer.godSlayer = true;
             player.GetModPlayer<CalamityClickersPlayer>().setGodSlayerClicker = true;
+            var hotkey = CalamityKeybinds.GodSlayerDashHotKey.TooltipHotkeyString();
+            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey, GodSlayerChestplate.DashCooldown.FramesToSeconds());//ShrapnelRoundCooldown.FramesToSeconds(), hotkey, GodSlayerChestplate.DashCooldown.FramesToSeconds());
+            player.setBonus = player.setBonus.Replace("ff00ff", Utils.Hex3(DevourerofGodsHead.SpecialMoveColor));
             if (modPlayer.godSlayerDashHotKeyPressed || (player.dashDelay != 0 && modPlayer.LastUsedDashID == GodslayerArmorDash.ID))
             {
                 modPlayer.DeferredDashID = GodslayerArmorDash.ID;

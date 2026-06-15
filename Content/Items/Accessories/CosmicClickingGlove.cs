@@ -35,7 +35,6 @@ namespace CalamityClickers.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient<LunarClickingGlove>()
                 .AddIngredient<FingerOfBloodGod>()
-                .AddIngredient<CosmiliteBar>(8)
                 .AddIngredient<AscendantSpiritEssence>(4)
                 .AddTile<CosmicAnvil>()
                 .Register();

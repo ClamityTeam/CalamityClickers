@@ -20,7 +20,7 @@ namespace CalamityClickers.Content.Items.Armor
             Item.width = 18;
             Item.height = 18;
             Item.value = CalamityGlobalItem.RarityPureGreenBuyPrice;
-            Item.defense = 20;
+            Item.defense = 16;
             Item.rare = ModContent.RarityType<PureGreen>();
         }
 
@@ -56,7 +56,7 @@ namespace CalamityClickers.Content.Items.Armor
             CreateRecipe().
                 AddIngredient<BloodstoneCore>(11).
                 AddIngredient<RuinousSoul>(2).
-                AddTile(TileID.LunarCraftingStation).
+                AddTile(TileID.MythrilAnvil).
                 Register();
         }
     }
