@@ -14,7 +14,7 @@ Add some forgotton clickers (like Old Duke's Clicker)
 Hunt of the Old God compatibility
 Calamity Entropy compatibility
 
-Also mod has some changes for both Clicker class and Calamity:
+This mod also has some other minor changes for both Clicker class and Calamity:
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
 2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. The Clicker now is crafted with using Shadowspec Bars. Quintessence Clicker is now only after defeating Exo Mechs and Supreme Calamitas.
 3. Any Lunar Pillar enemy can now drops mice fragments (lower chance than other fragments but drops by any lunar enemy)

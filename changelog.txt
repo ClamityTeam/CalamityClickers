@@ -7,6 +7,10 @@ Centein Brainstorm Fixes:
 - Updated Visual of Profaned Rapturer's effect visual and sprite
 - Ore Press now has Pink rarity (as same as other Earth Elemental drop)
 - Verandia Elementulip uses 5 Mife Fragments instead of 5 Galactic Singularity
+- D.o.G no longer requires Luminite Bars or Galactica Singularitys to craft
+- Lunar Clicking Glove now requires 5 Mice Fragments instead of Galacta Singularitys to craft
+- Meld Clicker now requires 12 Meld Blobs instead of Meld Constructs
+- Elemental Clicker now requires 5 Mice Fragments instead of Galacta Singularitys to craft
 - Reworked Bellatrix
 - Bellatrix now uses Starblight Clicker
 - Cosmic Clicking Glove no longer uses Cosmilite Bars
@@ -21,3 +25,4 @@ Centein Brainstorm Fixes:
 - Nerfed God Slayer Cloaker Hood's defence from 34 to 33 
 - Nerfed God Slayer Cloaker Hood's damage boost from 14% to 10% and critical chance from 14% to 12%
 - Changed "clicker" to "click" in localization in lines like "clicker damage/critical strike chance/radius"
+- Cyro Clcker now inflicts Frozen instead of Glacial State

@@ -68,13 +68,6 @@ namespace CalamityClickers.Commons
                 }
 
             }
-
-            /*Recipe.Create(ModContent.ItemType<TheClicker>())
-                .AddIngredient<LordsClicker>()
-                .AddIngredient(ItemID.WhitePaint, 50)
-                .AddIngredient<ShadowspecBar>(5)
-                .AddTile<DraedonsForge>()
-                .Register();*/
         }
     }
 }
