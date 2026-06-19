@@ -1,5 +1,4 @@
-﻿using CalamityMod;
-using CalamityMod.CustomRecipes;
+﻿using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
@@ -18,6 +17,7 @@ using Terraria.Utilities;
 
 namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 {
+    [LegacyName("NuclearClicker")]
     public class FusionPointer : ModdedClickerWeapon
     {
         public static string CurrentStrike { get; internal set; } = string.Empty;

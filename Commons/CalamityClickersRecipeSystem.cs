@@ -1,5 +1,4 @@
 ﻿using CalamityMod.Items.Materials;
-using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using ClickerClass.Items.Misc;
 using ClickerClass.Items.Tools;
@@ -56,10 +55,6 @@ namespace CalamityClickers.Commons
         {
             foreach (Recipe recipe in Main.recipe)
             {
-                if (recipe.HasResult<GalacticaSingularity>())
-                {
-                    recipe.AddIngredient<MiceFragment>();
-                }
                 /*if (recipe.HasResult(ItemID.CelestialSigil) && recipe.Mod == null)
                 {
                     if (recipe.Mod == null)

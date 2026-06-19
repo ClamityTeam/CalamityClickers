@@ -37,7 +37,6 @@ namespace CalamityClickers.Content.Items.Potions
                 AddTile(TileID.Kegs).
                 Register();
         }
-
     }
     public class GChargeBuff : ModBuff
     {
@@ -49,13 +48,14 @@ namespace CalamityClickers.Content.Items.Potions
             Main.persistentBuff[Type] = true;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
         }
-        public static float ClickDamageBoostPerCPS => 0.01f;
-        public static float RadiusNerf => 0.5f;
+        public static float ClickDamageBoostPerCPS => 0.02f;
+        public static float ClickerEffectCountNerf => 0.1f;
+        //public static float RadiusNerf => 0.5f;
         public override void Update(Player player, ref int buffIndex)
         {
             player.CalClicker().gchargeBuff = true;
             player.GetDamage<ClickerDamage>() += ClickDamageBoostPerCPS * player.Clicker().clickerPerSecond;
-            player.Clicker().clickerBonusPercent += 0.1f;
+            player.Clicker().clickerBonusPercent += ClickerEffectCountNerf;
         }
         //20% increased click damage
         //Reduces your click radius by half

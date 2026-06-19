@@ -8,6 +8,8 @@ using CalamityClickers.Content.Items.Weapons.PostML.Yharon;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
+using ClickerClass;
+using ClickerClass.Items.Accessories;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -17,6 +19,24 @@ namespace CalamityClickers
 {
     public class CalamityClickersGlobalItem : GlobalItem
     {
+        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+        {
+            ClickerPlayer clickPlayer = player.Clicker();
+            CalamityClickersPlayer modPlayer = player.CalClicker();
+            if (item.ModItem is Soda)
+            {
+                clickPlayer.clickerBonus -= Soda.ClickAmountDecreaseFlat;
+                if (modPlayer.crateLevel < 1)
+                    modPlayer.crateLevel = 1;
+
+            }
+            if (item.ModItem is GamerCrate)
+            {
+                clickPlayer.clickerBonusPercent += (float)GamerCrate.ClickAmountDecrease / 100f;
+                if (modPlayer.crateLevel < 2)
+                    modPlayer.crateLevel = 2;
+            }
+        }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Mod calamity = ModLoader.GetMod("CalamityMod");

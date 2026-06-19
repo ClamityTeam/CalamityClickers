@@ -6,7 +6,6 @@ using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
@@ -26,10 +25,10 @@ namespace CalamityClickers.Content.Items.Accessories
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            ClickerPlayer clickerPlayer = player.GetModPlayer<ClickerPlayer>();
+            ClickerPlayer clickerPlayer = player.Clicker();
             clickerPlayer.clickerRadius += 1f;
             player.GetDamage<ClickerDamage>() += 0.3f;
-            clickerPlayer.clickerBonusPercent -= 0.2f;
+            player.CalClicker().crateLevel = 2;
             ClickerCompat.SetAutoReuseEffect(player, 6f, true);
             clickerPlayer.accAimbotModule = true;
             clickerPlayer.accAimbotModule2 = true;
@@ -40,9 +39,6 @@ namespace CalamityClickers.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient<GamerCrate>()
                 .AddIngredient<AimbotModule>()
-                //.AddIngredient<IcePack>()
-                .AddIngredient(ItemID.LunarBar, 8)
-                .AddIngredient<GalacticaSingularity>(4)
                 .AddIngredient<AscendantSpiritEssence>(4)
                 .AddTile<CosmicAnvil>()
                 .Register();

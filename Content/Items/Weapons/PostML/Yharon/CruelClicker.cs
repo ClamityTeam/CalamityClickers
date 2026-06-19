@@ -44,7 +44,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 
             Item.damage = 850;
             Item.knockBack = 1f;
-            Item.rare = ModContent.RarityType<BurnishedAuric>();
+            Item.rare = ModContent.RarityType<CalamityRed>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
         }
         /*private void DrawingAnimation(SpriteBatch spriteBatch, Vector2 baseDrawPosition, float baseScale, Color drawColor)

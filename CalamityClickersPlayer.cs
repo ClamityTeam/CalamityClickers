@@ -42,6 +42,7 @@ namespace CalamityClickers
         public bool clickerSelected = false;
         public int clickerTotal = 0;
         public int clickAmount = 0;
+        public int crateLevel = 0;
 
         public bool setVictideClicker = false;
         public bool setDaedalusClicker = false;
@@ -79,6 +80,8 @@ namespace CalamityClickers
             rageRegenMult = 0;
 
             clickerSelected = false;
+
+            crateLevel = 0;
 
             setVictideClicker = false;
             setDaedalusClicker = false;
@@ -522,14 +525,22 @@ namespace CalamityClickers
                     }
                 }
             }
-            if (gchargeBuff)
+            //Idea for maybe second alcohol
+            /*if (gchargeBuff)
             {
-                //Player.Clicker().clickerRadius *= GChargeBuff.RadiusNerf;
-                //Player.Clicker().clickerRadiusDraw *= GChargeBuff.RadiusNerf;
-            }
+                Player.Clicker().clickerRadius *= GChargeBuff.RadiusNerf;
+                Player.Clicker().clickerRadiusDraw *= GChargeBuff.RadiusNerf;
+            }*/
         }
         public override void PostUpdateMiscEffects()
         {
+            ClickerPlayer clickPlayer = Player.Clicker();
+            if (crateLevel > 0)
+            {
+                if (crateLevel >= 2) clickPlayer.clickerBonusPercent -= (float)GamerCrate.ClickAmountDecrease / 100f;
+                else clickPlayer.clickerBonus += Soda.ClickAmountDecreaseFlat;
+            }
+
             Player.Clicker().clickerBonusPercent = 1f / (2f - Player.Clicker().clickerBonusPercent);
 
             //UpdateRippers();
@@ -767,8 +778,10 @@ namespace CalamityClickers
             {
                 if (setHydrothermicClicker)
                 {
-                    target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
+                    target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoilTime + 6, 5 * 60, 20 * 60));
                     target.CalClicker().hydrothermicBoilPower += 5;
+                    if (target.CalClicker().hydrothermicBoilPower > 500)
+                        target.CalClicker().hydrothermicBoilPower = 500;
                 }
             }
         }

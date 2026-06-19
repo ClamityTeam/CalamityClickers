@@ -1,9 +1,11 @@
 ﻿using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityMod;
+using CalamityMod.DataStructures;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
 using CalamityMod.Rarities;
+using CalamityMod.Systems.Collections;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -52,22 +54,34 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
                 .Register();
         }
     }
+    public class ItsClickerDebuffData : DebuffData
+    {
+        public ItsClickerDebuffData()
+            : base()
+        {
+            NPCLifeRegenMethod = ItsClickerDebuffNPCMethod;
+        }
+        public void ItsClickerDebuffNPCMethod(NPC npc, int buffType, ref int buffIndex, ref int damage)
+        {
+            EnemyLostRegen = npc.lifeMax / 100;
+            BaseUpdateNPCLifeRegen(npc, buffType, ref buffIndex, ref damage);
+        }
+    }
     public class ItsClickerDebuff : ModBuff
     {
+        public static DebuffData debuffData = new ItsClickerDebuffData();
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
             BuffID.Sets.LongerExpertDebuff[Type] = true;
+            CalamityBuffSets.DebuffDataset[Type] = debuffData;
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            if (npc.CalClicker().wither < npc.buffTime[buffIndex])
-                npc.CalClicker().wither = npc.buffTime[buffIndex];
-            npc.DelBuff(buffIndex);
-            buffIndex--;
+            npc.CalClicker().wither = true;
         }
 
         internal static void DrawEffects(NPC npc, ref Color drawColor)

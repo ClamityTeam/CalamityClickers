@@ -15,6 +15,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 {
+    [LegacyName("GaussClicker")]
     public class HandheldClickerDrill : ModdedClickerWeapon
     {
         public static string DrillShot { get; internal set; } = string.Empty;

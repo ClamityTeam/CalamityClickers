@@ -13,6 +13,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
 {
     public class GaussClicker : ModdedClickerWeapon
     {
+        public override bool IsLoadingEnabled(Mod mod) => false;
         public static string GaussFlux { get; internal set; } = string.Empty;
         public override float Radius => 3.4f;
         public override Color RadiusColor => new Color(88, 81, 85);

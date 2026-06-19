@@ -1,6 +1,8 @@
 ﻿using CalamityMod;
+using CalamityMod.DataStructures;
 using CalamityMod.Items.Armor.Hydrothermic;
 using CalamityMod.Items.Materials;
+using CalamityMod.Systems.Collections;
 using ClickerClass;
 using ClickerClass.Items;
 using Terraria;
@@ -59,22 +61,36 @@ namespace CalamityClickers.Content.Items.Armor
                 Register();
         }
     }
+    public class HydrothermicCapsuitDebuffData : DebuffData
+    {
+        public HydrothermicCapsuitDebuffData()
+            : base()
+        {
+            HeatDebuffScaling = 1;
+            NPCLifeRegenMethod = HydrothermicDebuffNPCMethod;
+        }
+        public void HydrothermicDebuffNPCMethod(NPC npc, int buffType, ref int buffIndex, ref int damage)
+        {
+            EnemyLostRegen = npc.CalClicker().hydrothermicBoilPower;
+            BaseUpdateNPCLifeRegen(npc, buffType, ref buffIndex, ref damage);
+        }
+    }
     public class HydrothermicCapsuitDebuff : ModBuff
     {
+        public static DebuffData debuffData = new HydrothermicCapsuitDebuffData();
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
             //BuffID.Sets.LongerExpertDebuff[Type] = true;
+            CalamityBuffSets.DebuffDataset[Type] = debuffData;
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            if (npc.CalClicker().hydrothermicBoil < npc.buffTime[buffIndex])
-                npc.CalClicker().hydrothermicBoil = npc.buffTime[buffIndex];
-            npc.DelBuff(buffIndex);
-            buffIndex--;
+            npc.CalClicker().hydrothermicBoil = true;
+            npc.CalClicker().hydrothermicBoilTime = npc.buffTime[buffIndex];
         }
 
     }

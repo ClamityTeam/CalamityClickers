@@ -16,6 +16,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
 {
     public class NuclearClicker : ModdedClickerWeapon
     {
+        public override bool IsLoadingEnabled(Mod mod) => false;
         public static string NuclearExplosion { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => new Color(236, 255, 31);

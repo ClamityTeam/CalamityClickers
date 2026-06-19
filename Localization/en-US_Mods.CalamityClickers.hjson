@@ -198,6 +198,11 @@ ClickEffect: {
 		Description: Creates a circle of moons that fly towards your cursor after a while
 	}
 
+	Constellation: {
+		Name: Constellation
+		Description: Every 10th click spawns constellation star. Right Click to detonate it and applies Voidfrost
+	}
+
 	Lifestealing: {
 		Name: Lifestealing
 		Description: Heals you by 2 hp if the target is Marked for Death
@@ -821,7 +826,7 @@ Items: {
 			DisplayName: G-Charge
 			Tooltip:
 				'''
-				Increase click damage by 1% per click per second
+				Increase click damage by 2% per click per second
 				10% increased amount of clicks required for a click effect
 				{$Mods.CalamityMod.Common.AlcoholWarning}
 				'''
@@ -851,7 +856,9 @@ Projectiles: {
 		RuinousClickerProjectile.DisplayName: Ruinous Portal
 		RuinousClickerProjectileSoul.DisplayName: Ruinous Soul
 		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
-		StratusClickerProjectile.DisplayName: Stratus Moon
+		StratusClickerProjectileOld.DisplayName: Stratus Moon
+		StratusClickerProjectile.DisplayName: Constellation Star
+		StratusClickerProjectileExplosion.DisplayName: Constellation Star Supernova
 		DarksunClickerProjectile.DisplayName: Dark Sun
 		ClickerOfGodsProjectile.DisplayName: Nebula Star
 		StarblightClickerProjectile.DisplayName: Astral Dust
@@ -926,7 +933,7 @@ Buffs: {
 	HydrothermicCapsuitDebuff: {
 		DisplayName: Hydrothermic Boil
 		Description: You don't know description
-		ItemTooltip: Heat - 50 DPS + 5 per stack up to total of 500 DPS
+		ItemTooltipEnemy: Heat - 50 DPS + 5 per stack (Max 500 DPS)
 	}
 
 	ClickerfinBuff: {
@@ -935,8 +942,8 @@ Buffs: {
 	}
 
 	GChargeBuff: {
-		DisplayName: G Charge Buff
-		Description: Mods.CalamityClickers.Buffs.GChargeBuff.Description
+		DisplayName: G-Charge
+		Description: Click damage increased based on CPS, but clicker effects less often appears
 	}
 }
 

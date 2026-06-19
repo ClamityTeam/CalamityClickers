@@ -40,7 +40,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<MeldConstruct>(12)
+                .AddIngredient<MeldBlob>(18)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }

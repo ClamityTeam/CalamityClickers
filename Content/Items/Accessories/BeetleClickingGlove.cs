@@ -1,5 +1,7 @@
-﻿using CalamityMod.Items;
+﻿using CalamityMod.DataStructures;
+using CalamityMod.Items;
 using CalamityMod.Items.Accessories;
+using CalamityMod.Systems.Collections;
 using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
@@ -42,22 +44,35 @@ namespace CalamityClickers.Content.Items.Accessories
                 .Register();
         }
     }
+    public class BeetleClickingGloveDebuffData : DebuffData
+    {
+        public BeetleClickingGloveDebuffData()
+            : base()
+        {
+            NPCLifeRegenMethod = HydrothermicDebuffNPCMethod;
+        }
+        public void HydrothermicDebuffNPCMethod(NPC npc, int buffType, ref int buffIndex, ref int damage)
+        {
+            Player player = Main.player[npc.CalClicker().clickDebuffOwner];
+            EnemyLostRegen = (int)(player.Clicker().clickerPerSecond * 5);
+            BaseUpdateNPCLifeRegen(npc, buffType, ref buffIndex, ref damage);
+        }
+    }
     public class BeetleClickingGloveDebuff : ModBuff
     {
+        public static DebuffData debuffData = new BeetleClickingGloveDebuffData();
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
             BuffID.Sets.LongerExpertDebuff[Type] = true;
+            CalamityBuffSets.DebuffDataset[Type] = debuffData;
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            if (npc.CalClicker().clickDebuff < npc.buffTime[buffIndex])
-                npc.CalClicker().clickDebuff = npc.buffTime[buffIndex];
-            npc.DelBuff(buffIndex);
-            buffIndex--;
+            npc.CalClicker().clickDebuff = true;
         }
     }
 }

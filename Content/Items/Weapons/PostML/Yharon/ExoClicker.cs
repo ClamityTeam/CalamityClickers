@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 
             Item.damage = 420;
             Item.knockBack = 1f;
-            Item.rare = ModContent.RarityType<BurnishedAuric>();
+            Item.rare = ModContent.RarityType<ExoticRainbow>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
         }
     }

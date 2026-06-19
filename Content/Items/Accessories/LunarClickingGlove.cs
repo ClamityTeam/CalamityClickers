@@ -1,5 +1,4 @@
 ﻿using CalamityMod.Items;
-using CalamityMod.Items.Materials;
 using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
@@ -34,7 +33,7 @@ namespace CalamityClickers.Content.Items.Accessories
                 .AddIngredient<RegalClickingGlove>()
                 .AddIngredient<LihzahrdParticleAccelerator>()
                 .AddIngredient(ItemID.LunarBar, 5)
-                .AddIngredient<GalacticaSingularity>(5)
+                .AddIngredient<MiceFragment>(5)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }
